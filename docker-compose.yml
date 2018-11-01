@@ -1,0 +1,14 @@
+version: "3.2"
+services:
+  socialstreamparserapp:
+    build: .
+    ports:
+    - "8080:8080"
+    depends_on:
+    - mongo
+    volumes:
+      - ./papers:/papers
+  mongo:
+    image: mongo
+    ports:
+    - "27017:27017"
